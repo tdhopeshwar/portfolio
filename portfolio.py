@@ -89,28 +89,49 @@ if st.sidebar.button('Projects'):
          
          # Additional projects can be added here
          # st.image, st.video, st.markdown, etc., to showcase other projects
+    with st.expander("Image Captioning Using Deep Learning"):
+        st.write("This project explores the intersection of computer vision and natural language processing by developing a deep learning model for image captioning. Presented at the 2021 International Conference on Computational Performance Evaluation, our work leverages advanced neural networks to generate descriptive text for images, pushing the boundaries of AI's ability to understand and interpret visual content.")
+        st.write('''
+        **Publication**:
+        
+        Y. S. Jain, T. Dhopeshwar, S. K. Chadha and V. Pagire, "Image Captioning using Deep Learning," 2021 International Conference on Computational Performance Evaluation (ComPE), Shillong, India, 2021, pp. 040-044, doi: 10.1109/ComPE53109.2021.9751818. keywords: {Deep learning;Performance evaluation;Image recognition;Social networking (online);Surveillance;Object detection;Real-time systems;Image Caption;Attention;CNN;RNN},
 
+        ''')
+        st.write('''
+For more details, you can refer to the publication [Image Captioning Using Deep Learning](https://ieeexplore.ieee.org/abstract/document/9751818). ''')
+
+    
             
 if st.sidebar.button('Experience'):
     st.header('Experience')
 
     with st.expander("Data Analyst | Vodafone Intelligent Solutions (Aug 2021 – Mar 2023)"):
         st.write("""
-        - Led the creation and implementation of data pipelines, enabling smooth data transfer to Google BigQuery, reducing operational costs by 30%.
-        - Enhanced data pipeline scalability and efficiency, reducing downtime by 25%.
-        - Boosted revenue by 20% and customer engagement by 30% through AI-based marketing campaigns.
-        - Automated operations, saving 30 hours of manual tasks per month, and resolved key data issues, preventing significant revenue loss.
+        -As a Data Analyst at Vodafone Intelligent Solutions, I spearheaded pivotal initiatives aimed at optimizing data management processes and leveraging advanced analytics for business enhancement. Key responsibilities included:
+
+-Data Pipeline Creation and Implementation: Orchestrated the development and deployment of robust data pipelines, facilitating seamless migration of data from On-Premise Databases to Google BigQuery. This initiative led to a notable 30% reduction in operational costs.
+
+-Data Transformation and Cleansing: Transformed raw data into refined, structured formats conducive to in-depth analysis. By ensuring the scalability, reliability, and efficiency of data pipelines, downtime was reduced by 25%.
+
+-AI-Driven Marketing Campaigns: Utilized AI-based models within Pega to execute real-time marketing campaigns, harnessing customer data for targeted outreach. The implementation resulted in a remarkable 20% increase in revenue and a 30% enhancement in customer engagement metrics.
+
+-Automation with Shell Scripts: Developed and deployed Shell Scripts for automating routine operational tasks, including Server Health Monitoring and Housekeeping. This initiative not only bolstered server performance but also yielded substantial monthly savings equivalent to 30 hours of manual labor.
+
+-Database Issue Resolution: Addressed critical data issues within Teradata and Oracle Databases, safeguarding data integrity and averting potential disruptions. These efforts mitigated downtime risks, preventing an estimated loss of €50,000 in revenue.
         """)
 
     with st.expander("Research Assistant | MIT World Peace University (Nov 2020 – Jun 2021)"):
         st.write("""
-        - Developed an architecture for automated image description generation using deep learning.
-        - Published a research paper on the subject, contributing to the field of computational performance evaluation.
+-As a Research Assistant at MIT World Peace University, I played a pivotal role in advancing the field of computer vision and natural language processing. Key responsibilities included:
+
+-Architecture Development: Constructed an innovative architecture featuring a dense attention model with a CNN Encoder and RNN Decoder. This architecture seamlessly integrated object detection and text generation algorithms to automate the generation of image descriptions.
+
+-Publication Achievement: Published a paper titled "Image Captioning using Deep Learning" at the esteemed 2021 International Conference on Computational Performance Evaluation. The paper achieved an impressive average BLEU score of 51.77, highlighting the effectiveness and significance of the proposed methodology.
         """)
 
     with st.expander("Machine Learning Intern | Incognetics Technologies (Jun 2020 – Oct 2020)"):
         st.write("""
-        - Developed a contract summarization model using LSTM networks and NLP, enhancing operational efficiency by 30%.
+        During my internship at Incognetics Technologies in 2020, I spearheaded the development of a contract summarization model leveraging LSTM networks and NLP techniques. This innovative project resulted in a significant 30% increase in operational efficiency, thereby enhancing overall productivity and contributing to streamlined operations within the organization. Through this endeavor, I gained valuable hands-on experience in applying cutting-edge machine learning and natural language processing methodologies to real-world business challenges.
         """)         
 
         
@@ -119,14 +140,14 @@ if st.sidebar.button('Content Creation'):
 
     # Information about YouTube Channel
     st.subheader('YouTube Channel')
-    st.write('Here is a brief overview of my YouTube channel where I share [content type, e.g., educational videos, tutorials, vlogs, etc.]. Check out my channel [here](Your YouTube Channel Link).')
+    st.write('Here is a brief overview of my YouTube channel where I share Lifestyle, Travel and Informational Videos. Check out my channel [here](https://www.youtube.com/channel/UCXH9s5XakB22syX3Vnawl7w).')
     
     # Embedding a YouTube video
     st.video('https://youtu.be/dP0TV5FCIAc?si=c3yjnQXmCP2u9INd')
 
     # Information about Instagram Handle
     st.subheader('Instagram')
-    st.write('Follow me on Instagram [@YourInstagramHandle](Your Instagram Profile Link) for more updates and insights.')
+    st.write('Follow me on Instagram [@toulouuseee__](https://www.instagram.com/toulouuseee__/) for more updates and insights.')
 
             
             
