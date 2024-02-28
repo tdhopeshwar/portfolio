@@ -51,7 +51,7 @@ with tab1:
              ''')
 
     with col2:  # This column is for your image
-        image = Image.open('Profile_pic.jpg')
+        image = Image.open('Profile_pic.JPG')
         # Display the image using HTML to apply the custom CSS for circular crop
         st.markdown(
             f'<img src="data:image/jpeg;base64,{image_to_base64(image)}" class="circle-img">', 
