@@ -5,6 +5,9 @@ import base64
 from io import BytesIO
 st.set_page_config(layout="wide")
 
+tab1, tab2, tab3, tab4, tab5 = st.tabs(["Home", "Projects", "Experience", "Content Creation", "Contact"])
+
+
 def image_to_base64(image):
     import base64
     from io import BytesIO
@@ -27,34 +30,37 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
-st.title('Tanisha Dhopeshwar')
 
-st.write('''
-Aspiring Data Scientist''')
-# About Me section integrated directly into the homepage
-st.header('About Me')
-
-# Use columns for layout
-col1, col2 = st.columns([3, 1])  # Adjust the ratio as needed
-
-with col1:  # This column is for your text
+with tab1:
+    
+    st.title('Tanisha Dhopeshwar')
+      
     st.write('''
+      Aspiring Data Scientist''')
+      # About Me section integrated directly into the homepage
+    st.header('About Me')
+      
+      # Use columns for layout
+    col1, col2 = st.columns([3, 1])  # Adjust the ratio as needed
+      
+    with col1:  # This column is for your text
+         st.write('''
     "I'm Tanisha Dhopeshwar, a data analyst and machine learning practitioner currently pursuing a Master's in Data Analytics at San Jose State University. My academic journey is fueled by a passion for uncovering insights through data, supported by a solid foundation in technical skills, including SQL, Python, and advanced analytics tools. With hands-on machine learning experience from my roles at Vodafone and Incognetics Technologies, I've honed my skills in predictive modeling and AI-driven analysis. My passion is to unlock the stories that data reveals—be it predicting market trends or uncovering the narratives behind music popularity. I bring a mix of rigorous analysis and creative problem-solving to the table, eager to tackle the next data challenge.
 
     My aim is to merge technical analysis with business savvy to craft data-driven strategies that enact meaningful change. Whether it's cutting operational costs or boosting customer engagement through targeted marketing, my focus is on transforming complex data into actionable insights."
-    ''')
+             ''')
 
-with col2:  # This column is for your image
-    image = Image.open('Profile_pic.JPG')
-    # Display the image using HTML to apply the custom CSS for circular crop
-    st.markdown(
-        f'<img src="data:image/jpeg;base64,{image_to_base64(image)}" class="circle-img">', 
-        unsafe_allow_html=True
-    )
+    with col2:  # This column is for your image
+        image = Image.open('Profile_pic.jpg')
+        # Display the image using HTML to apply the custom CSS for circular crop
+        st.markdown(
+            f'<img src="data:image/jpeg;base64,{image_to_base64(image)}" class="circle-img">', 
+            unsafe_allow_html=True
+        )
+    
 
 
-
-if st.sidebar.button('Projects'):
+with tab2:
     st.header('Projects')
     st.write('Here are some of my projects...')
     with st.expander("Harmony Hits Analysis"):
@@ -81,11 +87,11 @@ if st.sidebar.button('Projects'):
          - Integrate social media trends to understand correlations with Spotify rankings.
          ''')
          # Embed Tableau visualization within the Projects section
-         tableau_url = "https://public.tableau.com/views/SpotifyTrendAnalysis_TanishaDhopeshwar/SpotifyTrendAnalysis?:language=en-US&publish=yes&:sid=&:display_count=n&:origin=viz_share_link"
+         tableau_url = "https://public.tableau.com/views/SpotifyTrendAnalysis_TanishaDhopeshwar/SpotifyTrendAnalysis?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link"
          tableau_iframe_html = f'''
          <iframe src="{tableau_url}" width="100%" height="1000" frameborder="0"></iframe>
          '''
-         components.html(tableau_iframe_html, height=1300)
+         components.html(tableau_iframe_html, height=1000)
          
          # Additional projects can be added here
          # st.image, st.video, st.markdown, etc., to showcase other projects
@@ -102,7 +108,7 @@ For more details, you can refer to the publication [Image Captioning Using Deep 
 
     
             
-if st.sidebar.button('Experience'):
+with tab3:
     st.header('Experience')
 
     with st.expander("Data Analyst | Vodafone Intelligent Solutions (Aug 2021 – Mar 2023)"):
@@ -135,7 +141,7 @@ if st.sidebar.button('Experience'):
         """)         
 
         
-if st.sidebar.button('Content Creation'):
+with tab4:
     st.header('Content Creation')
 
     # Information about YouTube Channel
@@ -151,7 +157,7 @@ if st.sidebar.button('Content Creation'):
 
             
             
-if st.sidebar.button('Contact'):
+with tab5:
     st.header('Contact Me')
     st.write('You can contact me via email at tanisha.dhopeshwar@sjsu.edu you can also reach out to me on LinkedIn "https://www.linkedin.com/in/tdhopeshwar/"')
 
