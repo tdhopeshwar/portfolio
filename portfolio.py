@@ -106,6 +106,18 @@ with tab2:
         st.write('''
 For more details, you can refer to the publication [Image Captioning Using Deep Learning](https://ieeexplore.ieee.org/abstract/document/9751818). ''')
 
+    with st.expander("Influencer Project"):
+        st.subheader('Influencer Project')
+        st.write('''
+        The goal of this project is to build a machine learning model that can predict which influencer out of a pair (A and B) is more influential based on various social media metrics. The predictions help in understanding the impact of influencers' online presence and can guide marketing and promotional decisions. You can check out the project [here](https://github.com/tdhopeshwar/Influencer-Project).
+        ''')
+
+    with st.expander("Geographic Origin Of Music"):
+        st.subheader('Geographic Origin Of Music')
+        st.write('''
+        This project focuses on predicting the geographical origins of music tracks using their audio features. Leveraging a dataset of 1059 music tracks, each characterized by a set of features extracted from the audio signal, we develop a regression model that estimates the latitude and longitude coordinates corresponding to the origin of each track. You can check out the project [here](https://github.com/tdhopeshwar/GrographicOriginOfMusic).
+        ''')
+    
     
             
 with tab3:
