@@ -96,6 +96,7 @@ with tab2:
          # Additional projects can be added here
          # st.image, st.video, st.markdown, etc., to showcase other projects
     with st.expander("Image Captioning Using Deep Learning"):
+        st.subheader('Influencer Project')
         st.write("This project explores the intersection of computer vision and natural language processing by developing a deep learning model for image captioning. Presented at the 2021 International Conference on Computational Performance Evaluation, our work leverages advanced neural networks to generate descriptive text for images, pushing the boundaries of AI's ability to understand and interpret visual content.")
         st.write('''
         **Publication**:
