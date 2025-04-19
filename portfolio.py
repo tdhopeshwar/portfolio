@@ -140,7 +140,7 @@ with tab3:
 
     st.markdown("""
     <div style="background-color:#f9f9f9; padding:15px; border-radius:10px; box-shadow: 2px 2px 12px #aaa; margin-bottom: 15px;">
-    <h4>Machine Learning Scientist | Entrevita (Apr 2024 – Present)</h4>
+    <h4>Machine Learning Scientist Intern| Entrevita (Aug 2024 – Dec 2024)</h4>
     <p>
     Leading the development of AI-powered precision health tools by integrating biometric data with fine-tuned large language models (LLMs). Engineered a smart nutrition advisor that generates personalized meal and supplement plans using QLoRA-tuned models deployed via Azure OpenAI. Additionally, built a real-time height detection pipeline using YOLOv5 and MiDaS to assist with contextual health assessments. Contributing to Entrevita's mission to democratize health by delivering actionable insights from individual biopsychosocial data.
     </p>
