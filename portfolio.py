@@ -177,13 +177,6 @@ with tab4:
 
 with tab5:
     st.header('Contact Me')
-    with st.form("contact_form"):
-        name = st.text_input("Name")
-        email = st.text_input("Email")
-        message = st.text_area("Message")
-        submitted = st.form_submit_button("Send")
-        if submitted:
-            st.success("Thanks for reaching out! I'll get back to you soon.")
 
     st.write("📧 tanisha.dhopeshwar@sjsu.edu")
     st.write("🔗 [LinkedIn](https://www.linkedin.com/in/tdhopeshwar/)")
