@@ -1,3 +1,4 @@
+
 import streamlit as st
 import streamlit.components.v1 as components
 from PIL import Image
@@ -64,30 +65,75 @@ with tab2:
         </div>
         ''', unsafe_allow_html=True)
 
-    subtab1, subtab2, subtab3, subtab4, subtab5 = st.tabs(["🖼️ Computer Vision", "🎯 Recommendation Systems", "🧠 Deep Learning", "📊 Data Science & Analytics", "📚 Others"])
+    subtab1, subtab2, subtab3, subtab4 = st.tabs(["🖼️ Computer Vision", "🎯 Recommendation Systems", "🧠 Deep Learning", "📊 Data Science & Analytics"])
 
     with subtab1:
         project_card("Image Captioning Using Deep Learning",
         "Presented at the 2021 International Conference on Computational Performance Evaluation. Used CNN-RNN architecture to caption images with a BLEU score of 51.77.",
         "https://ieeexplore.ieee.org/abstract/document/9751818")
 
+        project_card(
+        "Real-Time Height Detection Model",
+        "Developed a real-time height detection system using YOLOv5 and MiDaS for object detection and depth estimation.",
+        "https://github.com/tdhopeshwar/Height-Detection" )
+
+        project_card(
+        "Road Sign Detection using YOLOv8",
+        "Trained YOLOv8 on a custom 25-class dataset to detect and classify road signs with 86% accuracy.",
+        "https://github.com/tdhopeshwar/Deep-Learning-Projects/blob/main/YOLO_Object_Detection_Training.ipynb.ipynb")
+
+        project_card(
+        "Cat Breed Classification with CNN",
+        "Implemented a convolutional neural network to classify cat images into breeds, achieving high accuracy through image preprocessing and model tuning.",
+        "https://github.com/tdhopeshwar/Deep-Learning-Projects/blob/main/Cat_Breed_Classification.ipynb")
+
     with subtab2:
-        project_card("Influencer Project",
-        "ML model to predict more influential social media user between two influencers based on their metrics.",
-        "https://github.com/tdhopeshwar/Influencer-Project")
+        project_card("Anime Recommendation using ANN",
+        "Developed a neural network-based recommendation system that learns user preferences and anime features to suggest titles users are likely to enjoy.",
+        "https://github.com/tdhopeshwar/Anime-Recommendation")
+
+        project_card("Kdrama Recommendation using LLM",
+        "Built a recommendation tool using a large language model (LLM) to generate Kdrama suggestions based on plot descriptions, user queries, and viewing history.",
+        "https://github.com/tdhopeshwar/kdrama-Recommendation-using-LLM")
+
 
     with subtab3:
-        project_card("Geographic Origin Of Music",
-        "Used regression to predict the geographical origin of a music track using audio features.",
-        "https://github.com/tdhopeshwar/GrographicOriginOfMusic")
+        project_card("Fashion MNIST GAN",
+        "Used a Generative Adversarial Network (GAN) to generate realistic fashion item images by learning from the Fashion MNIST dataset.",
+        "https://github.com/tdhopeshwar/Deep-Learning-Projects/blob/main/Fashion_MNIST_GAN_Basics.ipynb")
+
+        project_card("Deep Learning Project Suite",
+        "A collection of foundational deep learning projects covering CNNs, RNNs, and GANs, built to strengthen understanding of model architectures, training workflows, and real-world applications in image generation, classification, and sequence modeling.",
+        "https://github.com/tdhopeshwar/Deep-Learning-Projects")
+
+        project_card("Anime Recommendation using ANN",
+        "Developed a neural network-based recommendation system that learns user preferences and anime features to suggest titles users are likely to enjoy.",
+        "https://github.com/tdhopeshwar/Anime-Recommendation")
+
+        project_card("Kdrama Recommendation using LLM",
+        "Built a recommendation tool using a large language model (LLM) to generate Kdrama suggestions based on plot descriptions, user queries, and viewing history.",
+        "https://github.com/tdhopeshwar/kdrama-Recommendation-using-LLM")
+
+
 
     with subtab4:
         project_card("Harmony Hits Analysis",
         "An analysis of Spotify's top 200 songs to understand popularity trends, artist diversity, and social media influence. Created for a Data Visualization course at San Jose State University.",
         "https://public.tableau.com/views/SpotifyTrendAnalysis_TanishaDhopeshwar/SpotifyTrendAnalysis")
 
-    with subtab5:
-        st.write("Add any miscellaneous or future projects here.")
+        project_card("Geographic Origin Of Music",
+        "Used regression to predict the geographical origin of a music track using audio features.",
+        "https://github.com/tdhopeshwar/GrographicOriginOfMusic")
+
+        project_card("Influencer Comparison Model",
+        "ML model to predict more influential social media user between two influencers based on their metrics.",
+        "https://github.com/tdhopeshwar/Influencer-Project")
+
+        project_card("Myocardial Infarction Analysis",
+        "Analyzed complications post-myocardial infarction using patient clinical data to predict outcomes and identify key risk factors through machine learning models.",
+        "https://github.com/tdhopeshwar/Myocardial_Infarction_Analysis")
+
+        
 
 with tab3:
     st.header('Experience')
