@@ -1,177 +1,137 @@
 import streamlit as st
 import streamlit.components.v1 as components
 from PIL import Image
-import base64
 from io import BytesIO
+import base64
+import time
+
 st.set_page_config(layout="wide")
 
-tab1, tab2, tab3, tab4, tab5 = st.tabs(["Home", "Projects", "Experience", "Content Creation", "Contact"])
+# Custom CSS
+st.markdown("""
+<style>
+    .stApp {
+        background: linear-gradient(to right, #f0f2f5, #ffffff);
+    }
+    .circle-img {
+        border-radius: 50%;
+        width: 150px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    h1 {
+        font-family: 'Georgia', serif;
+        font-size: 3em;
+        color: #1f4e79;
+    }
+    h2, h3, h4 {
+        font-family: 'Verdana', sans-serif;
+        color: #2e4053;
+    }
+</style>
+""", unsafe_allow_html=True)
 
+# Tabs
+tab1, tab2, tab3, tab4, tab5 = st.tabs(["🏠 Home", "📊 Projects", "💼 Experience", "🎥 Content", "📬 Contact"])
 
+# Helper function
 def image_to_base64(image):
-    import base64
-    from io import BytesIO
-
     buffered = BytesIO()
     image.save(buffered, format="JPEG")
     img_str = base64.b64encode(buffered.getvalue()).decode()
     return img_str
-# Custom CSS to make the image circular
-st.markdown(
-    """
-    <style>
-    .circle-img {
-        border-radius: 50%;
-        width: auto;
-        max-width: 150px;  # You can adjust the size as needed
-        height: auto;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True,
-)
 
 with tab1:
-    
     st.title('Tanisha Dhopeshwar')
-      
-    st.write('''
-      Aspiring Data Scientist''')
-      # About Me section integrated directly into the homepage
+    st.write('''Aspiring Data Scientist''')
     st.header('About Me')
-      
-      # Use columns for layout
-    col1, col2 = st.columns([3, 1])  # Adjust the ratio as needed
-      
-    with col1:  # This column is for your text
-         st.write('''
-    "I'm Tanisha Dhopeshwar, a data analyst and machine learning practitioner currently pursuing a Master's in Data Analytics at San Jose State University. My academic journey is fueled by a passion for uncovering insights through data, supported by a solid foundation in technical skills, including SQL, Python, and advanced analytics tools. With hands-on machine learning experience from my roles at Vodafone and Incognetics Technologies, I've honed my skills in predictive modeling and AI-driven analysis. My passion is to unlock the stories that data reveals—be it predicting market trends or uncovering the narratives behind music popularity. I bring a mix of rigorous analysis and creative problem-solving to the table, eager to tackle the next data challenge.
 
-    My aim is to merge technical analysis with business savvy to craft data-driven strategies that enact meaningful change. Whether it's cutting operational costs or boosting customer engagement through targeted marketing, my focus is on transforming complex data into actionable insights."
-             ''')
-
-    with col2:  # This column is for your image
+    col1, col2 = st.columns([3, 1])
+    with col1:
+        st.markdown('''"I'm Tanisha Dhopeshwar, a data analyst and machine learning practitioner currently pursuing a Master's in Data Analytics at San Jose State University. With hands-on machine learning experience from my roles at Vodafone and Incognetics Technologies, I've honed my skills in predictive modeling and AI-driven analysis. My aim is to merge technical analysis with business savvy to craft data-driven strategies that enact meaningful change."''')
+    with col2:
         image = Image.open('Profile_pic.JPG')
-        # Display the image using HTML to apply the custom CSS for circular crop
-        st.markdown(
-            f'<img src="data:image/jpeg;base64,{image_to_base64(image)}" class="circle-img">', 
-            unsafe_allow_html=True
-        )
-    
-
+        st.markdown(f'<img src="data:image/jpeg;base64,{image_to_base64(image)}" class="circle-img">', unsafe_allow_html=True)
 
 with tab2:
     st.header('Projects')
-    st.write('Here are some of my projects...')
-    with st.expander("Harmony Hits Analysis"):
-         st.subheader('Harmony Hits Analysis')
-         st.write('''
-         **Introduction**: The Harmony Hits Analysis aims to unravel trends in music popularity, explore artist dynamics, 
-         and understand the influence of social media trends on Spotify rankings. In a rapidly evolving music landscape, 
-         these insights are crucial for artists, music companies, and streaming platforms. This project was created as a part of the Data Visualization Course  work at San Jose State University under Professor Andrew Bond.''')
 
-         st.write('''
-         **1.1 Background**:
-         
-         We frequently listen to songs online in the music industry. Spotify is a popular music application.  
-         The title of the project is "HarmonyHits: Exploring Top 200 Spotify Songs."
-         The goal of this project is to help people understand these top 200 songs using pictures and graphs. 
-         A timeline that shows how songs go up and down in popularity.
-         ''')
-     
-         st.write('''
-         **1.2 Objectives**:
-         - Analyze trends in music popularity over time.
-         - Investigate the global reach and popularity of Harmony Hits.
-         - Explore the relationship between artist popularity and diversity.
-         - Integrate social media trends to understand correlations with Spotify rankings.
-         ''')
-         # Embed Tableau visualization within the Projects section
-         tableau_url = "https://public.tableau.com/views/SpotifyTrendAnalysis_TanishaDhopeshwar/SpotifyTrendAnalysis?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link"
-         tableau_iframe_html = f'''
-         <iframe src="{tableau_url}" width="100%" height="1000" frameborder="0"></iframe>
-         '''
-         components.html(tableau_iframe_html, height=1000)
-         
-         # Additional projects can be added here
-         # st.image, st.video, st.markdown, etc., to showcase other projects
-    with st.expander("Image Captioning Using Deep Learning"):
-        st.subheader('Influencer Project')
-        st.write("This project explores the intersection of computer vision and natural language processing by developing a deep learning model for image captioning. Presented at the 2021 International Conference on Computational Performance Evaluation, our work leverages advanced neural networks to generate descriptive text for images, pushing the boundaries of AI's ability to understand and interpret visual content.")
-        st.write('''
-        **Publication**:
-        
-        Y. S. Jain, T. Dhopeshwar, S. K. Chadha and V. Pagire, "Image Captioning using Deep Learning," 2021 International Conference on Computational Performance Evaluation (ComPE), Shillong, India, 2021, pp. 040-044, doi: 10.1109/ComPE53109.2021.9751818. keywords: {Deep learning;Performance evaluation;Image recognition;Social networking (online);Surveillance;Object detection;Real-time systems;Image Caption;Attention;CNN;RNN},
+    def project_card(title, desc, link=None):
+        st.markdown(f'''
+        <div style="background-color:#f9f9f9; padding:15px; border-radius:10px; box-shadow: 2px 2px 12px #aaa; margin-bottom: 15px;">
+            <h4>{title}</h4>
+            <p>{desc}</p>
+            {'<a href="' + link + '" target="_blank">🔗 View Project</a>' if link else ''}
+        </div>
+        ''', unsafe_allow_html=True)
 
-        ''')
-        st.write('''
-For more details, you can refer to the publication [Image Captioning Using Deep Learning](https://ieeexplore.ieee.org/abstract/document/9751818). ''')
+    subtab1, subtab2, subtab3, subtab4, subtab5 = st.tabs(["🖼️ Computer Vision", "🎯 Recommendation Systems", "🧠 Deep Learning", "📊 Data Science & Analytics", "📚 Others"])
 
-    with st.expander("Influencer Project"):
-        st.subheader('Influencer Project')
-        st.write('''
-        The goal of this project is to build a machine learning model that can predict which influencer out of a pair (A and B) is more influential based on various social media metrics. The predictions help in understanding the impact of influencers' online presence and can guide marketing and promotional decisions. You can check out the project [here](https://github.com/tdhopeshwar/Influencer-Project).
-        ''')
+    with subtab1:
+        project_card("Image Captioning Using Deep Learning",
+        "Presented at the 2021 International Conference on Computational Performance Evaluation. Used CNN-RNN architecture to caption images with a BLEU score of 51.77.",
+        "https://ieeexplore.ieee.org/abstract/document/9751818")
 
-    with st.expander("Geographic Origin Of Music"):
-        st.subheader('Geographic Origin Of Music')
-        st.write('''
-        This project focuses on predicting the geographical origins of music tracks using their audio features. Leveraging a dataset of 1059 music tracks, each characterized by a set of features extracted from the audio signal, we develop a regression model that estimates the latitude and longitude coordinates corresponding to the origin of each track. You can check out the project [here](https://github.com/tdhopeshwar/GrographicOriginOfMusic).
-        ''')
-    
-    
-            
+    with subtab2:
+        project_card("Influencer Project",
+        "ML model to predict more influential social media user between two influencers based on their metrics.",
+        "https://github.com/tdhopeshwar/Influencer-Project")
+
+    with subtab3:
+        project_card("Geographic Origin Of Music",
+        "Used regression to predict the geographical origin of a music track using audio features.",
+        "https://github.com/tdhopeshwar/GrographicOriginOfMusic")
+
+    with subtab4:
+        project_card("Harmony Hits Analysis",
+        "An analysis of Spotify's top 200 songs to understand popularity trends, artist diversity, and social media influence. Created for a Data Visualization course at San Jose State University.",
+        "https://public.tableau.com/views/SpotifyTrendAnalysis_TanishaDhopeshwar/SpotifyTrendAnalysis")
+
+    with subtab5:
+        st.write("Add any miscellaneous or future projects here.")
+
 with tab3:
     st.header('Experience')
 
-    with st.expander("Data Analyst | Vodafone Intelligent Solutions (Aug 2021 – Mar 2023)"):
-        st.write("""
-        -As a Data Analyst at Vodafone Intelligent Solutions, I spearheaded pivotal initiatives aimed at optimizing data management processes and leveraging advanced analytics for business enhancement. Key responsibilities included:
+    st.markdown("""
+    <div style="background-color:#f9f9f9; padding:15px; border-radius:10px; box-shadow: 2px 2px 12px #aaa; margin-bottom: 15px;">
+    <h4>Data Analyst | Vodafone Intelligent Solutions (Aug 2021 – Mar 2023)</h4>
+    <p>
+    Orchestrated end-to-end data pipelines from on-prem to BigQuery. Led marketing campaigns using AI models with 20% revenue increase. Automated 30 hours/month tasks with Shell scripts. Safeguarded data systems against €50,000 in risks.
+    </p>
+    </div>
+    <div style="background-color:#f9f9f9; padding:15px; border-radius:10px; box-shadow: 2px 2px 12px #aaa; margin-bottom: 15px;">
+    <h4>Research Assistant | MIT World Peace University (Nov 2020 – Jun 2021)</h4>
+    <p>
+    Designed an image captioning architecture with CNN-RNN and attention. Published at ComPE 2021 with a BLEU score of 51.77.
+    </p>
+    </div>
+    <div style="background-color:#f9f9f9; padding:15px; border-radius:10px; box-shadow: 2px 2px 12px #aaa; margin-bottom: 15px;">
+    <h4>Machine Learning Intern | Incognetics Technologies (Jun 2020 – Oct 2020)</h4>
+    <p>
+    Developed LSTM-based contract summarizer, improving efficiency by 30%. Applied NLP and ML for real-world legal document insights.
+    </p>
+    </div>
+    """, unsafe_allow_html=True)
 
--Data Pipeline Creation and Implementation: Orchestrated the development and deployment of robust data pipelines, facilitating seamless migration of data from On-Premise Databases to Google BigQuery. This initiative led to a notable 30% reduction in operational costs.
-
--Data Transformation and Cleansing: Transformed raw data into refined, structured formats conducive to in-depth analysis. By ensuring the scalability, reliability, and efficiency of data pipelines, downtime was reduced by 25%.
-
--AI-Driven Marketing Campaigns: Utilized AI-based models within Pega to execute real-time marketing campaigns, harnessing customer data for targeted outreach. The implementation resulted in a remarkable 20% increase in revenue and a 30% enhancement in customer engagement metrics.
-
--Automation with Shell Scripts: Developed and deployed Shell Scripts for automating routine operational tasks, including Server Health Monitoring and Housekeeping. This initiative not only bolstered server performance but also yielded substantial monthly savings equivalent to 30 hours of manual labor.
-
--Database Issue Resolution: Addressed critical data issues within Teradata and Oracle Databases, safeguarding data integrity and averting potential disruptions. These efforts mitigated downtime risks, preventing an estimated loss of €50,000 in revenue.
-        """)
-
-    with st.expander("Research Assistant | MIT World Peace University (Nov 2020 – Jun 2021)"):
-        st.write("""
--As a Research Assistant at MIT World Peace University, I played a pivotal role in advancing the field of computer vision and natural language processing. Key responsibilities included:
-
--Architecture Development: Constructed an innovative architecture featuring a dense attention model with a CNN Encoder and RNN Decoder. This architecture seamlessly integrated object detection and text generation algorithms to automate the generation of image descriptions.
-
--Publication Achievement: Published a paper titled "Image Captioning using Deep Learning" at the esteemed 2021 International Conference on Computational Performance Evaluation. The paper achieved an impressive average BLEU score of 51.77, highlighting the effectiveness and significance of the proposed methodology.
-        """)
-
-    with st.expander("Machine Learning Intern | Incognetics Technologies (Jun 2020 – Oct 2020)"):
-        st.write("""
-        During my internship at Incognetics Technologies in 2020, I spearheaded the development of a contract summarization model leveraging LSTM networks and NLP techniques. This innovative project resulted in a significant 30% increase in operational efficiency, thereby enhancing overall productivity and contributing to streamlined operations within the organization. Through this endeavor, I gained valuable hands-on experience in applying cutting-edge machine learning and natural language processing methodologies to real-world business challenges.
-        """)         
-
-        
 with tab4:
     st.header('Content Creation')
 
-    # Information about YouTube Channel
-    st.subheader('YouTube Channel')
-    st.write('Here is a brief overview of my YouTube channel where I share Lifestyle, Travel and Informational Videos. Check out my channel [here](https://www.youtube.com/channel/UCXH9s5XakB22syX3Vnawl7w).')
-    
-    # Embedding a YouTube video
+    st.subheader('📺 YouTube Channel')
+    st.write("Lifestyle, travel and tech explained! [Visit Channel](https://www.youtube.com/channel/UCXH9s5XakB22syX3Vnawl7w)")
     st.video('https://youtu.be/dP0TV5FCIAc?si=c3yjnQXmCP2u9INd')
 
-    # Information about Instagram Handle
-    st.subheader('Instagram')
-    st.write('Follow me on Instagram [@toulouuseee__](https://www.instagram.com/toulouuseee__/) for more updates and insights.')
+    st.subheader('📸 Instagram')
+    st.write("Follow me on Instagram [@toulouuseee__](https://www.instagram.com/toulouuseee__/) for travel and behind-the-scenes content.")
 
-            
-            
 with tab5:
     st.header('Contact Me')
-    st.write('You can contact me via email at tanisha.dhopeshwar@sjsu.edu you can also reach out to me on LinkedIn "https://www.linkedin.com/in/tdhopeshwar/"')
+    with st.form("contact_form"):
+        name = st.text_input("Name")
+        email = st.text_input("Email")
+        message = st.text_area("Message")
+        submitted = st.form_submit_button("Send")
+        if submitted:
+            st.success("Thanks for reaching out! I'll get back to you soon.")
 
-
+    st.write("📧 tanisha.dhopeshwar@sjsu.edu")
+    st.write("🔗 [LinkedIn](https://www.linkedin.com/in/tdhopeshwar/)")
