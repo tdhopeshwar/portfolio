@@ -43,12 +43,12 @@ def image_to_base64(image):
 
 with tab1:
     st.title('Tanisha Dhopeshwar')
-    st.write('''Aspiring Data Scientist''')
+    st.markdown("<h3 style='color: #5a5a5a; margin-top: -20px;'>Machine Learning Engineer | Data Scientist</h3>", unsafe_allow_html=True)
     st.header('About Me')
 
     col1, col2 = st.columns([3, 1])
     with col1:
-        st.markdown('''"I'm Tanisha Dhopeshwar, a data analyst and machine learning practitioner currently pursuing a Master's in Data Analytics at San Jose State University. With hands-on machine learning experience from my roles at Vodafone and Incognetics Technologies, I've honed my skills in predictive modeling and AI-driven analysis. My aim is to merge technical analysis with business savvy to craft data-driven strategies that enact meaningful change."''')
+        st.markdown('''"I'm Tanisha Dhopeshwar, a passionate Machine Learning Engineer and Data Scientist currently pursuing my Master's in Data Analytics at San Jose State University. I thrive at the intersection of data, creativity, and impact—harnessing the power of AI to uncover patterns, tell stories, and drive innovation. With hands-on experience from Vodafone, Incognetics, and current research in Generative AI and computer vision, I’ve designed and deployed real-world models that solve problems in healthcare, marketing, and content personalization. I aim to bridge technical depth with user-centered insights to build solutions that are not only smart but also meaningful."''')
     with col2:
         image = Image.open('Profile_pic.JPG')
         st.markdown(f'<img src="data:image/jpeg;base64,{image_to_base64(image)}" class="circle-img">', unsafe_allow_html=True)
@@ -140,22 +140,28 @@ with tab3:
 
     st.markdown("""
     <div style="background-color:#f9f9f9; padding:15px; border-radius:10px; box-shadow: 2px 2px 12px #aaa; margin-bottom: 15px;">
-    <h4>Data Analyst | Vodafone Intelligent Solutions (Aug 2021 – Mar 2023)</h4>
+    <h4>Machine Learning Scientist | Entrevita (Apr 2024 – Present)</h4>
     <p>
-    Orchestrated end-to-end data pipelines from on-prem to BigQuery. Led marketing campaigns using AI models with 20% revenue increase. Automated 30 hours/month tasks with Shell scripts. Safeguarded data systems against €50,000 in risks.
+    Leading the development of AI-powered precision health tools by integrating biometric data with fine-tuned large language models (LLMs). Engineered a smart nutrition advisor that generates personalized meal and supplement plans using QLoRA-tuned models deployed via Azure OpenAI. Additionally, built a real-time height detection pipeline using YOLOv5 and MiDaS to assist with contextual health assessments. Contributing to Entrevita's mission to democratize health by delivering actionable insights from individual biopsychosocial data.
     </p>
     </div>
+    <div style="background-color:#f9f9f9; padding:15px; border-radius:10px; box-shadow: 2px 2px 12px #aaa; margin-bottom: 15px;">
+    <h4>Data Analyst | Vodafone Intelligent Solutions (Aug 2021 – Mar 2023)</h4>
+<p>
+Led development of predictive marketing models using TensorFlow and BigQuery on GCP, boosting customer engagement by 27%. Automated data cleaning and transformation with Pandas and Scikit-learn, improving data quality by 37%. Resolved critical integrity issues in Teradata and Oracle databases using ML-based anomaly detection, preventing disruptions and averting potential €47,000 revenue loss.
+</p>
+</div>
     <div style="background-color:#f9f9f9; padding:15px; border-radius:10px; box-shadow: 2px 2px 12px #aaa; margin-bottom: 15px;">
     <h4>Research Assistant | MIT World Peace University (Nov 2020 – Jun 2021)</h4>
-    <p>
-    Designed an image captioning architecture with CNN-RNN and attention. Published at ComPE 2021 with a BLEU score of 51.77.
-    </p>
-    </div>
+<p>
+Designed an automated image captioning architecture using CNN and RNN with attention mechanism, achieving a 51.77 BLEU score. Focused on enhancing object detection and natural language generation for real-time captioning applications.
+</p>
+</div>
     <div style="background-color:#f9f9f9; padding:15px; border-radius:10px; box-shadow: 2px 2px 12px #aaa; margin-bottom: 15px;">
     <h4>Machine Learning Intern | Incognetics Technologies (Jun 2020 – Oct 2020)</h4>
-    <p>
-    Developed LSTM-based contract summarizer, improving efficiency by 30%. Applied NLP and ML for real-world legal document insights.
-    </p>
+<p>
+Developed a contract summarization model using LSTM networks, increasing operational efficiency by 33%. Applied NLP techniques to extract and summarize key legal clauses, streamlining internal workflows.
+</p>
     </div>
     """, unsafe_allow_html=True)
 
